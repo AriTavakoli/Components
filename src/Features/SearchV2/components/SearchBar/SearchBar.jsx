@@ -5,11 +5,24 @@ import ExIcon from '../assets/icons/ExIcon';
 import { useAutoAnimate } from '@formkit/auto-animate/react'
 import './SearchBar.css'
 import Icon from '../assets/icons/Icon';
+import Settings from '../Settings/Settings';
+import Fade from '../../Fade';
+import useOnClickOutside from '../hooks/useOnClickOutside';
 
 function SearchBar({ children }) {
   const dispatch = useSearchDispatch();
   const { searchTerm, handleSearch, searchResults } = useSearchContext();
   const { selectedCategories, toggleCategory, availableCategories } = useSearchContext();
+  const [show, setShow] = useState(false);
+
+  const settingsRef = useRef();
+
+  const toggleSettings = () => {
+    setShow(!show);
+  }
+  useOnClickOutside(settingsRef, () => setShow(false));
+
+
 
   const [parent, enableAnimations] = useAutoAnimate(/* optional config */)
 
@@ -41,9 +54,17 @@ function SearchBar({ children }) {
                 <input className="search-bar-input" autoFocus="autoFocus" type="text" onChange={(e) => { handleSearch(e.target.value) }} value={searchTerm} placeholder="Find anything..." />
               </div>
 
-              <div className="ex-icon" onClick={() => { }}>
+              <div ref={settingsRef} className="ex-icon" onClick={() => { toggleSettings() }}>
+
                 <Icon id="settings" size={20}></Icon>
+
+                <Fade show={show}>
+                  <Settings ></Settings>
+                </Fade>
+
               </div>
+
+
             </div>
           </div>
         </div>
