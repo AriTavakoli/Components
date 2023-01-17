@@ -25,7 +25,7 @@ function Tabs(props) {
       const left = bounds.left - rootBounds.left;
       const right = rootBounds.right - bounds.right;
 
-      newSizes[key] = {left, right};
+      newSizes[key] = { left, right };
     });
 
     setSizes(newSizes);
@@ -35,37 +35,47 @@ function Tabs(props) {
   console.log(JSON.stringify(sizes, null, 2));
 
   return (
-    <div
-      className="Tabs"
-      ref={root}
-    >
-      {React.Children.map(props.children, (child, i) => {
-        let className = `Tabs__Tab`;
-        if (child.key === props.active) {
-          className = `${className} Tabs__Tab--active`;
-        }
-        return (
-          <div
-            className={className}
-            onClick={() => {
-              props.onChange(child.key);
-            }}
-            ref={el => els.current[child.key] = el}
-          >
-            {child}
-          </div>
-        );
-      })}
+    <div className="Tabs-container">
       <div
-        className="Tabs__Underline"
-        style={getUnderlineStyle()}
-      />
+        className="Tabs"
+        ref={root}
+      >
+        {React.Children.map(props.children, (child, i) => {
+          let className = `Tabs__Tab`;
+          if (child.key === props.active) {
+            className = `${className} Tabs__Tab--active`;
+          }
+          return (
+            <div
+              className={className}
+              onClick={() => {
+                props.onChange(child.key);
+              }}
+              ref={el => els.current[child.key] = el}
+            >
+              {child}
+            </div>
+          );
+        })}
+        <div className="Tabs__Underline-Container">
+
+          <div
+            className="Tabs__Underline"
+            style={getUnderlineStyle()}
+          />
+          <div
+            className="Tabs__UnderlineWhole"
+          />
+        </div>
+
+
+      </div>
     </div>
   );
 
   function getUnderlineStyle() {
     if (props.active == null || Object.keys(sizes).length === 0) {
-      return {left: '0', right: '100%'};
+      return { left: '0', right: '100%' };
     }
 
     const size = sizes[props.active];

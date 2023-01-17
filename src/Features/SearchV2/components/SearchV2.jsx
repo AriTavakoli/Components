@@ -24,13 +24,16 @@ function SearchV2() {
 
       <div
         style={{
-          paddingLeft: '200px',
+          // paddingLeft: '200px',
+          position: 'relative',
+          left: '25%',
           borderTopLeftRadius: '50px',
           borderTopRightRadius: '50px',
           borderBottomLeftRadius: '50px',
           borderBottomRightRadius: '50px',
           overflow: 'none',
-          width: '700px'
+          width: '700px',
+          backgroundColor: '#181818'
         }}>
         <SearchProvider>
           <SearchBar>

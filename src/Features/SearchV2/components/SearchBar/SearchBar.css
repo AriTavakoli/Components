@@ -15,8 +15,8 @@
   height : 60px;
   justify-content: center;
   padding-bottom: 2px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 16px;
+  padding-right: 16px;
   border-width: 0px;
   border-radius: 20px;
   border-color: 'initial';
@@ -59,8 +59,10 @@
   justify-content: center;
   border-style: none;
   line-height: 16px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: 8px;
+  margin-right: 8px;
   height: 35px;
   font-size: 13px;
   border-radius: 20px;
@@ -81,5 +83,5 @@
   justify-content: center;
   height: 24px;
   width: 24px;
-  color: rgb(117, 117, 117)
+  color: rgb(239, 239, 239)
 }

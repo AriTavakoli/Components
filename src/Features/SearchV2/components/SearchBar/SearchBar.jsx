@@ -4,6 +4,7 @@ import SearchIcon from '../assets/icons/SearchIcon';
 import ExIcon from '../assets/icons/ExIcon';
 import { useAutoAnimate } from '@formkit/auto-animate/react'
 import './SearchBar.css'
+import Icon from '../assets/icons/Icon';
 
 function SearchBar({ children }) {
   const dispatch = useSearchDispatch();
@@ -21,7 +22,9 @@ function SearchBar({ children }) {
             className="search-bar-container" >
             <div className="search-bar">
               <div className="search-icon-container">
-                <SearchIcon />
+                <Icon id="search" size={20}
+                ></Icon>
+                {/* <SearchIcon /> */}
               </div>
 
               <div className="filter-holder">
@@ -39,7 +42,7 @@ function SearchBar({ children }) {
               </div>
 
               <div className="ex-icon" onClick={() => { }}>
-                <ExIcon></ExIcon>
+                <Icon id="settings" size={20}></Icon>
               </div>
             </div>
           </div>
