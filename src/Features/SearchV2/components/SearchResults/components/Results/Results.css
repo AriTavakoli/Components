@@ -147,12 +147,25 @@ img {
   display: -ms-flexbox;
   display: flex;
   background-color: rgb(126, 126, 126);
-  transition: background-color 0.1s ease-in
+  transition: background-color 0.1s ease-in;
 }
 
+.result-item-skeleton {
+  width: 100%;
+  z-index: 100;
+  display: block;
+  background-color: rgb(47, 47, 47);
+  height: 1px;
+  margin-top: -4px;
+  /* margin-bottom: 10px; */
+  position: absolute;
+  /* bottom: -16px; */
+  left: 0px;
+}
 
 .result-item-divider {
   width: 100%;
+  z-index: 100;
 
   display: block;
   background-color: rgb(47, 47, 47);

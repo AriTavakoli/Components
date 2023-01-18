@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useSearchDispatch, useSearchContext } from '../SearchProvider';
-import SearchIcon from '../assets/icons/SearchIcon';
-import ExIcon from '../assets/icons/ExIcon';
 import { useAutoAnimate } from '@formkit/auto-animate/react'
 import './SearchBar.css'
 import Icon from '../assets/icons/Icon';

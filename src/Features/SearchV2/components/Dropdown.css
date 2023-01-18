@@ -35,8 +35,13 @@
   background-color: #181818;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
-  padding: 8px;
+  padding: 12px;
+  padding-left: 24px;
+  padding-right: 24px;
   padding-bottom: 30px;
+  max-height: 800px;
+  overflow-y: auto;
+
 
 }
 
