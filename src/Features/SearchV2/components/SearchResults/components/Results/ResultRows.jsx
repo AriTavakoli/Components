@@ -11,23 +11,10 @@ import Fade from '../../../../Fade'
 export default function ResultRow({ setCurrentRow, currentRowIndex, searchTerm, index, className }) {
 
   const rowRef = useRef(null)
-
-  const [animationParent] = useAutoAnimate({ duration: 100 })
-
   const [isExpanded, setIsExpanded] = useState(false);
-
   const toggleExpand = () => setIsExpanded(!isExpanded);
-
-  const [isMounted, setIsMounted] = useState(false);
-
   const [show, setShow] = useState(false);
   // const hasTransitionedIn = useMountTransition(isMounted, 100);
-
-
-
-
-
-
 
   return (
     <>
@@ -55,19 +42,13 @@ export default function ResultRow({ setCurrentRow, currentRowIndex, searchTerm, 
               </div>
 
               <div className="search-result-sub-wrapper">
-                <Icon size={24} color={'grey'} id="subdirectory_arrow_right" />
-
-                <div className="media-query-bubble">
-                  <div className="media-query_text">@max: 1080</div>
+                <div>
+                  <Icon size={24} color={'grey'} id="subdirectory_arrow_right" />
                 </div>
 
-                <div className="media-query-bubble">
-                  <div className="media-query_text">@max: 1080</div>
-                </div>
-
-                <div className="media-query-bubble">
-                  <div className="media-query_text">@max: 1080</div>
-                </div>
+                <TagBubble text={'@max : 1080'}></TagBubble>
+                <TagBubble text={'@max : 1080'}></TagBubble>
+                <TagBubble text={'@max : 1080'}></TagBubble>
 
 
                 <div className="suggestion-bottom-text">
@@ -78,12 +59,9 @@ export default function ResultRow({ setCurrentRow, currentRowIndex, searchTerm, 
             </div>
 
             <div className="suggestion-row_right">
-              <Icon color={'grey'} id="component" size={20}></Icon>
-              <Icon color={'grey'} id="bookmark" size={20}></Icon>
+              <Icon color={'grey'} id="component" size={22}></Icon>
+              <Icon color={'grey'} id="mark" size={22}></Icon>
             </div>
-
-
-
 
           </div>
 
@@ -110,6 +88,21 @@ export default function ResultRow({ setCurrentRow, currentRowIndex, searchTerm, 
 
   )
 }
+
+
+
+function TagBubble({ text }) {
+  return (
+    <div className="media-query-bubble">
+      <div className="media-query_text">{text}</div>
+    </div>
+  )
+}
+
+
+
+
+
 
 
 const HighlightedText = ({ className, searchTerm }) => {

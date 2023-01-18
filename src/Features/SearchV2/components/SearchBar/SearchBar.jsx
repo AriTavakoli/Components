@@ -11,32 +11,25 @@ import useOnClickOutside from '../hooks/useOnClickOutside';
 
 
 function SearchBar({ children }) {
-  const dispatch = useSearchDispatch();
-  const { searchTerm, handleSearch, searchResults } = useSearchContext();
-  const { selectedCategories, toggleCategory, availableCategories } = useSearchContext();
+  const { searchTerm, handleSearch } = useSearchContext();
+  const { selectedCategories, toggleCategory } = useSearchContext();
   const [show, setShow] = useState(false);
-
   const settingsRef = useRef();
 
-  const toggleSettings = () => {
-    setShow(!show);
-  }
+  const toggleSettings = () => { setShow(!show); }
 
   useOnClickOutside(settingsRef, () => setShow(false));
-  const [parent, enableAnimations] = useAutoAnimate(/* optional config */)
 
 
   return (
     <>
-
       <div>
         <div >
           <div
             className="search-bar-container" >
             <div className="search-bar">
               <div className="search-icon-container">
-                <Icon id="search" size={20}
-                ></Icon>
+                <Icon id="search" size={18} color={"grey"} />
                 {/* <SearchIcon /> */}
               </div>
               <div className="filter-holder">
@@ -53,7 +46,8 @@ function SearchBar({ children }) {
                 <input className="search-bar-input" autoFocus="autoFocus" type="text" onChange={(e) => { handleSearch(e.target.value) }} value={searchTerm} placeholder="Find anything..." />
               </div>
               <div ref={settingsRef} className="ex-icon" >
-                <Icon id="settings" onClick={() => { toggleSettings() }} size={20}></Icon>
+                <Icon id="settings" color={show ? "white" : "grey"}
+                  onClick={() => { toggleSettings() }} size={20} />
                 <Fade show={show}>
                   <Settings ></Settings>
                 </Fade>
@@ -64,9 +58,7 @@ function SearchBar({ children }) {
       </div>
       {children}
     </>
-
   )
-
 }
 
 export default SearchBar;

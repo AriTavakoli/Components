@@ -3,7 +3,7 @@ import { useSearchDispatch, useSearchContext } from '../SearchProvider';
 import './Filter.css'
 const Filter = () => {
 
-  const { searchTerm , selectedCategories, toggleCategory, availableCategories, } = useSearchContext();
+  const { searchTerm, selectedCategories, toggleCategory, availableCategories, } = useSearchContext();
 
   return (
     <div className="filter-container">
@@ -14,13 +14,9 @@ const Filter = () => {
           <div key={category.id} className="filter-button" onClick={() => toggleCategory(category)}>
             <span>{category.name}</span>
             {/* When the user clicks on the "+" icon, add the category to the selected categories list */}
-
-
             <svg onClick={() => toggleCategory(category)} width="12" height="12" style={{ alignItems: 'center' }}>
               <path d="M6 2V10M2 6H10" stroke="currentColor" stroke-width="2" />
             </svg>
-
-
           </div>
         ))}
       </div>

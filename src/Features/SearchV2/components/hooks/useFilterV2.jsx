@@ -5,7 +5,6 @@ import React, { useState, useEffect } from 'react'
 //add filter params to this.
 
 export default function useFilter(searchTerm, data) {
-
   const [results, setResults] = useState("");
 
 
@@ -19,10 +18,5 @@ export default function useFilter(searchTerm, data) {
 
 
   console.log(filteredData);
-
   return filteredData;
-
-
-
-
 }

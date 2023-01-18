@@ -12,7 +12,7 @@ function Settings({ ref }) {
       <SettingsRow icon="filter" label="Filter" iconSize="small" />
       <SettingsRow icon="filter" label="Filter" iconSize="small" />
 
-      <SettingsRow icon="filter" label="Filter" iconSize="small" />
+      <SettingsRow icon="filter" label="filter" iconSize="small" />
 
 
     </div>
@@ -24,7 +24,7 @@ function SettingsRow({ icon, label, iconSize }) {
   return (
     <div className="settings-row">
       <div className="settings-icon">
-        <Icon id={icon} size={iconSize} />
+        {/* <Icon id={icon} size={iconSize} /> */}
         <span>{label}</span>
       </div>
       <div className="settings-toggle">
