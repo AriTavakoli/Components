@@ -9,6 +9,7 @@ import Settings from '../Settings/Settings';
 import Fade from '../../Fade';
 import useOnClickOutside from '../hooks/useOnClickOutside';
 
+
 function SearchBar({ children }) {
   const dispatch = useSearchDispatch();
   const { searchTerm, handleSearch, searchResults } = useSearchContext();
@@ -20,11 +21,10 @@ function SearchBar({ children }) {
   const toggleSettings = () => {
     setShow(!show);
   }
+
   useOnClickOutside(settingsRef, () => setShow(false));
-
-
-
   const [parent, enableAnimations] = useAutoAnimate(/* optional config */)
+
 
   return (
     <>
@@ -39,7 +39,6 @@ function SearchBar({ children }) {
                 ></Icon>
                 {/* <SearchIcon /> */}
               </div>
-
               <div className="filter-holder">
                 {selectedCategories.map((category) => {
                   return (
@@ -53,18 +52,12 @@ function SearchBar({ children }) {
                 })}
                 <input className="search-bar-input" autoFocus="autoFocus" type="text" onChange={(e) => { handleSearch(e.target.value) }} value={searchTerm} placeholder="Find anything..." />
               </div>
-
-              <div ref={settingsRef} className="ex-icon" onClick={() => { toggleSettings() }}>
-
-                <Icon id="settings" size={20}></Icon>
-
+              <div ref={settingsRef} className="ex-icon" >
+                <Icon id="settings" onClick={() => { toggleSettings() }} size={20}></Icon>
                 <Fade show={show}>
                   <Settings ></Settings>
                 </Fade>
-
               </div>
-
-
             </div>
           </div>
         </div>
