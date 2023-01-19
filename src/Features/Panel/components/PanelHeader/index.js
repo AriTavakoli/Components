@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Icon from '../../../SearchV2/components/assets/icons/Icon';
 
 import '../../styles.css'
 
@@ -31,7 +32,10 @@ const PanelHeader = ({ onDrag }) => {
 
   return (
     <div className="panel__header" onMouseDown={handleMouseDown}>
-      header
+      <Icon id="toolbar-left" size={24}></Icon>
+      <Icon id="toolbar-bottom" size={24}></Icon>
+      <Icon id="toolbar-top" size={24}></Icon>
+
     </div>
   );
 }

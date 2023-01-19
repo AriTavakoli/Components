@@ -24,8 +24,7 @@ function SearchBar({ children }) {
     <>
       <div>
         <div >
-          <div
-            className="search-bar-container" >
+          <div className="search-bar-container" >
             <div className="search-bar">
               <div className="search-icon-container">
                 <Icon id="search" size={18} color={"grey"} />
@@ -44,6 +43,7 @@ function SearchBar({ children }) {
                 })}
                 <input className="search-bar-input" autoFocus="autoFocus" type="text" onChange={(e) => { handleSearch(e.target.value) }} value={searchTerm} placeholder="Find anything..." />
               </div>
+
               <div ref={settingsRef} className="ex-icon" >
                 <Icon id="settings" color={show ? "white" : "grey"}
                   onClick={() => { toggleSettings() }} size={20} />

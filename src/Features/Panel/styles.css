@@ -26,7 +26,11 @@
 
 .panel__header {
   padding: 4px;
-  background-color: #e2e0e0;
+  background-color: #171717;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  border-top-left-radius: 4px;
 }
 
 .panel__content {
