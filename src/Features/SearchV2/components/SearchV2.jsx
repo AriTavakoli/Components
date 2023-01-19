@@ -50,6 +50,9 @@ const SearchV2 = forwardRef(function SearchV2(props, searchRef) {
           {/* <SearchResults></SearchResults> */}
 
         </SearchProvider>
+
+
+        <div style = {{marginBottom: '20px', paddingBottom:'20px'}}></div>
       </div>
       {/* <div>{searchTerm}</div>
       <button onClick={() => { handleSearch() }}>add</button>

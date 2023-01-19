@@ -32,7 +32,7 @@ const Panel = ({ children }) => {
 
   const handleResize = (direction, movementX, movementY) => {
 
-    searchRef.current.style.pointerEvents = 'none';
+    // searchRef.current.style.pointerEvents = 'none';
 
 
     const panel = panelRef.current;
@@ -109,7 +109,7 @@ const Panel = ({ children }) => {
   };
   useEffect(() => {
     if (searchRef.current) {
-      const { offsetWidth, offsetHeight } = searchRef.current;
+      let { offsetWidth, offsetHeight } = searchRef.current;
       panelRef.current.style.width = `${offsetWidth}px`;
       panelRef.current.style.height = `${offsetHeight + 50}px`;
     }
@@ -136,11 +136,9 @@ const Panel = ({ children }) => {
         <PanelHeader onDrag={handleDrag} />
         <SearchV2 ref={searchRef} />
 
-        <div style={{ height: '20px', marginBottom: '20px' }}> </div>
 
-
+        <PanelHeader onDrag={handleDrag} />
         {/* <button onClick={handleConsoleRef}>console ref</button> */}
-
 
 
 
