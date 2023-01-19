@@ -1,6 +1,9 @@
 .App {
   text-align: center;
+
 }
+
+
 /*
 
 .body {
@@ -44,4 +47,7 @@
   to {
     transform: rotate(360deg);
   }
+}
+::-webkit-scrollbar-thumb {
+  background-color: #ff0000; /* Change color to red */
 }

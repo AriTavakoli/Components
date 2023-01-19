@@ -6,6 +6,7 @@ import Icon from '../assets/icons/Icon';
 import Settings from '../Settings/Settings';
 import Fade from '../../Fade';
 import useOnClickOutside from '../hooks/useOnClickOutside';
+import $ from 'jquery';
 
 
 function SearchBar({ children }) {

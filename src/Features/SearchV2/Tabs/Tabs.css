@@ -12,6 +12,8 @@
 .Tabs-container {
   width: 100%;
   background-color: #181818;
+  border-bottom: #181818;
+  box-shadow:  1px 1px 1px 1px #181818;
   /* padding-left: 8px; */
   /* border-bottom: black; */
   /* border-bottom: 4px solid #000000; */

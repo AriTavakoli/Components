@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, forwardRef } from 'react';
 // import SearchBar from './Components/SearchBar/SearchBar';
 // import CodeExtractor from '../../Parser/codeExtractor';
 // import WebflowExtractor from '../../Parser/webflowExtractor';
@@ -14,26 +14,28 @@ import TabParent from '../Tabs';
 
 
 
-function SearchV2() {
+const SearchV2 = forwardRef(function SearchV2(props, searchRef) {
 
-
+  //
 
   return (
     <>
-      <div style={{ height: '100px' }}></div>
 
       <div
+        ref={searchRef}
+        className = "ssddddd"
         style={{
           // paddingLeft: '200px',
           position: 'relative',
-          left: '25%',
-          borderTopLeftRadius: '50px',
-          borderTopRightRadius: '50px',
-          borderBottomLeftRadius: '50px',
-          borderBottomRightRadius: '50px',
-          overflow: 'none',
+          borderTopLeftRadius: '10px',
+          borderTopRightRadius: '10px',
+          borderBottomLeftRadius: '10px',
+          borderBottomRightRadius: '10px',
+          overflow: 'hidden',
           width: '700px',
-          backgroundColor: '#181818'
+          backgroundColor: '#181818',
+          paddingBottom: '10px',
+          marginBottom: '10px',
         }}>
         <SearchProvider>
           <SearchBar>
@@ -60,7 +62,7 @@ function SearchV2() {
 
 
 
-}
+})
 
 
 export default SearchV2;
